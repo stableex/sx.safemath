@@ -36,18 +36,48 @@ namespace safemath {
      * //=> 1
      * ```
      */
-    uint64_t sub(const uint64_t x, const uint64_t y) {
+    static uint64_t sub(const uint64_t x, const uint64_t y) {
         const uint64_t z = x - y;
         eosio::check(z <= x, "safemath-sub-overflow"); return z;
     }
 
-    // uint64_t mul(const uint64_t a, const uint64_t b) {
-    //     uint64_t c = a * b;
-    //     check(b == 0 || c / b == a, "mul-overflow"); return c;
-    // }
+    /**
+     * ## STATIC `mul`
+     *
+     * ### params
+     *
+     * - `{uint64_t} x`
+     * - `{uint64_t} y`
+     *
+     * ### example
+     *
+     * ```c++
+     * const uint64_t z = safemath::mul(2, 2);
+     * //=> 4
+     * ```
+     */
+    static uint64_t mul(const uint64_t x, const uint64_t y) {
+        const uint64_t z = x * y;
+        eosio::check(x == 0 || z / y == x, "safemath-mul-overflow"); return z;
+    }
 
-    // uint64_t div(const uint64_t a, const uint64_t b) {
-    //     check(b > 0, "divide by zero");
-    //     return a / b;
-    // }
+    /**
+     * ## STATIC `div`
+     *
+     * ### params
+     *
+     * - `{uint64_t} x`
+     * - `{uint64_t} y`
+     *
+     * ### example
+     *
+     * ```c++
+     * const uint64_t z = safemath::div(4, 2);
+     * //=> 2
+     * ```
+     */
+    static uint64_t div(const uint64_t x, const uint64_t y) {
+        eosio::check(y > 0, "safemath-divide-zero");
+        return x / y;
+    }
 }

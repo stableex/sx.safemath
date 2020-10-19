@@ -2,6 +2,7 @@
 
 #include <catch.hpp>
 #include <eosio/check.hpp>
+#include <uint128_t/uint128_t.cpp>
 
 #include "safemath.hpp"
 

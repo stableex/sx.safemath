@@ -7,7 +7,7 @@
 ## Quickstart
 
 ```c++
-#include <sx.safemath/safemath.hpp>
+#include "safemath.hpp"
 
 safemath::add(1, 2);
 //=> 3

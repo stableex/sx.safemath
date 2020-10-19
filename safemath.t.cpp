@@ -1,6 +1,7 @@
 #define CATCH_CONFIG_MAIN
 
-#include <sx.test/test.hpp>
+#include <catch.hpp>
+#include <eosio/check.hpp>
 
 #include "safemath.hpp"
 

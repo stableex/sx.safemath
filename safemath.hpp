@@ -56,9 +56,9 @@ namespace safemath {
      * //=> 4
      * ```
      */
-    static uint64_t mul(const uint64_t x, const uint64_t y) {
+    static uint64_t mul(const uint64_t a, const uint64_t y) {
         const uint64_t z = x * y;
-        eosio::check(x == 0 || z / y == x, "safemath-mul-overflow"); return z;
+        eosio::check(y == 0 || z / y == x, "safemath-mul-overflow"); return z;
     }
 
     /**
